@@ -1,2 +1,5 @@
 landsat/*
+landsat2/*
 pred.csv
+parcelas/*
+*.tif
