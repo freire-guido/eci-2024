@@ -6,8 +6,7 @@ def main(args):
     nbr1 = rasterio.open(args.prefire)
     nbr2 = rasterio.open(args.postfire)
     
-    bounds = [min(nbr1.bounds[i], nbr2.bounds[i]) for i in range(4)]
-    window = rasterio.windows.from_bounds(*bounds, transform=nbr1.transform)
+    window = rasterio.windows.from_bounds(*nbr2.bounds, transform=nbr1.transform)
 
     n1 = nbr1.read(1, window=window, boundless=False)
     n2 = nbr2.read(1, window=window, boundless=False)
